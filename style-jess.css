@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'Bayon';
+    src: url('Bayon-Regular.ttf') format('truetype'); /* Adjust the path if needed */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #141318;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+
+header {
+    font-family: 'Bayon', sans-serif;
+    text-transform: uppercase; 
+    font-size: calc(7vw);  /* Adjusting the font size calculation */
+    color: #28A962;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    position: absolute;
+    top: 20%;   /* Adjusted for better positioning */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 95%;
+    white-space: nowrap;
+    overflow: hidden;
+    letter-spacing: 0.05em; /* Reducing the letter spacing */
+}
+
+.puttensca {
+    max-width: 100vw;
+    max-height: 100vh;
+    width: auto;
+    height: auto;
+}
+
+.links-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 50%;  
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%; 
+    text-align: center;
+}
+
+.links-container a {
+  font-family: 'Bayon', sans-serif;
+  text-decoration: none;
+  color: #E4DBC8;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  font-size: 3em;
+  transition: color 0.3s;
+}
+
+.links-container a:hover {
+  color: #28A962;
+}
+
+@media screen and (max-width: 1024px) { /* Typical breakpoint for larger tablets */
+    .links-container {
+      flex-direction: column; 
+      gap: 1em;
+    }
+  }
+
+@media screen and (max-width: 600px) {
+    header {
+        font-size: 8vw; 
+        top: 15%;  /* Adjust this value to place the header a bit higher */
+    }
+  
+    .links-container {
+      flex-direction: column; 
+      gap: 1em;
+      top: 50%;  /* Adjust this value to place the links container below the header */
+    }
+}
