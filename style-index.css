@@ -70,6 +70,32 @@ header {
   color: #28A962;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.navbar-link {
+  font-family: 'Bayon', sans-serif;
+  text-decoration: none;
+  color: #E4DBC8;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  font-size: 2em;
+  transition: color 0.3s;
+}
+
+.navbar-link:hover {
+  color: #28A962;
+}
+
 @media screen and (max-width: 1024px) { /* Typical breakpoint for larger tablets */
     .links-container {
       flex-direction: column; 
