@@ -89,6 +89,10 @@ footer {
       padding: 0 5%;
   }
 
+  .main-header h1 {
+    font-size: 1.5em; /* Adjust this value as needed */
+}
+
   .container {
       grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
   }
