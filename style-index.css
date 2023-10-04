@@ -64,6 +64,8 @@ header {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
   font-size: 3em;
   transition: color 0.3s;
+  letter-spacing: 0.02em;
+  margin: 2%;
 }
 
 .links-container a:hover {
@@ -114,4 +116,9 @@ header {
       gap: 1em;
       top: 50%;  /* Adjust this value to place the links container below the header */
     }
+
+    .links-container a {
+      font-size: 2em;
+    }
+    
 }
