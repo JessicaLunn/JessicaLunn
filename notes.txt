@@ -1,0 +1,4 @@
+place a blur on the bottom inch of webpage - gallery 
+get the gallery images to load only when on screen 
+put in a page of options when pressing on gallery- 
+"illustrations", "projects" "greetings cards"
