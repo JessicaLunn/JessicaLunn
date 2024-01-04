@@ -8,49 +8,49 @@
 body {
   background-color: #FFF7EF;
   font-family: 'Bayon', sans-serif;
-  margin: 0;
-  padding: 0 10%;
+  margin: 1em;
+  padding: 1em; /* Remove padding to prevent horizontal overflow */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.requirement {
+  font-family: 'Bayon', sans-serif; /* Replace 'FirstFontFamily' with the actual font family for the requirement text */
+}
+
+li {
+  font-family: 'Verdana', sans-serif; /* Replace 'SecondFontFamily' with the actual font family for the rest of the text */
 }
 
 .main-header {
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 1em 0;
+  justify-content: center; /* Centered content */
   position: relative;
-  color: #E4DBC8;
+  padding: 1em 0;
 }
 
 .main-header h1 {
+  font-size: 3em; /* Adjust initial size as needed */
   margin: 0;
-  font-size: 2.5em;
-  letter-spacing: 10px; /* Spacing for G A L L E R Y */
+  padding-left: 60px; /* Adjust based on the size of the back button */
   text-align: center;
-  flex-grow: 1; /* This ensures that the title grows to take up available space */
+  flex-grow: 1;
 }
 
 .home-link {
-  color: #E4DBC8;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.5em;
   position: absolute;
-  right: 0;
+  left: 1%; /* Adjust position as needed */
   top: 50%;
   transform: translateY(-50%);
 }
 
-.main {
-  padding: 2em 0;
-  color: #E4DBC8;
-}
-
-.section h2 {
-  text-align: left; /* Titles to the left */
-  font-size: 1.5em;
-  margin-bottom: 1em;
-  margin-left: 0; /* Aligns title with the images */
-  color: #E4DBC8;
+.home-link img {
+  width: 50px; /* Adjust size as needed */
+  height: auto;
 }
 
 .container {
@@ -73,10 +73,12 @@ body {
 
 .insta-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;  /* Adjust for desired spacing between posts */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive columns */
+  gap: 20px;
   justify-content: center;
-  align-items: start;
+  margin: 0 auto; /* Centering the container */
+  width: auto; /* Adjust width considering the body padding */
+  overflow: hidden; /* Prevents horizontal overflow */
 }
 
 .instagram-media {
@@ -85,12 +87,10 @@ body {
   border-radius: 3px;
   box-shadow: 0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15);
   margin: 1px;
-  max-width: 540px;
-  min-width: 326px;
+  max-width: 100%; /* Ensure the tile does not exceed its container's width */
   padding: 0;
-  width: calc(100% - 2px);
+  width: 100%; /* Tile takes full width of its column */
 }
-
 
 footer {
   padding: 1em 0;
@@ -99,36 +99,33 @@ footer {
   color: #E4DBC8;
 }
 
-/* Inner text shadow effect for the letterpress look */
-.container img, .main-header, .home-link, footer p, .section h2 {
-  text-shadow: 1px 1px 0 #FFF7EF, -1px -1px 0 #FFF7EF, 1px -1px 0 #FFF7EF, -1px 1px 0 #FFF7EF; /* Adjusted for a more cut-out look */
+/* Responsive design for smaller screens */
+@media screen and (max-width: 900px) {
+  .insta-container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+  }
 }
 
-/* Responsive design for smaller screens */
 @media screen and (max-width: 600px) {
+  .insta-container {
+    grid-template-columns: 1fr; /* One column on small screens */
+  }
+
   body {
-      padding: 0 5%;
+    padding: 0 5%; /* Add some padding on smaller screens */
   }
 
   .main-header h1 {
-    font-size: 2em; /* Adjust this value as needed */
-}
-
-  .container {
-      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    font-size: 2em; /* Smaller font size for smaller screens */
+    padding-left: 40px; /* Smaller padding for smaller screens */
   }
 
-  .main-header {
-      justify-content: flex-start; /* Aligns the header content to the left */
-      text-align: left; /* This will make sure the text within is left-aligned */
-  }
-
-  .home-link {
-      position: static; /* Removes the absolute positioning on mobile */
-      margin-left: 15px; /* Adds a small space between the title and the link */
+  .home-link img {
+    width: 30px; /* Smaller image for smaller screens */
   }
 }
 
+/* Additional styles */
 .cv-section {
   margin: 20px 0;
   text-align: center;
@@ -146,4 +143,9 @@ footer {
 
 .cv-button:hover {
   background-color: #D4CBC0;
+}
+
+/* Inner text shadow effect */
+.main-header, .home-link, footer p, .container img {
+  text-shadow: 1px 1px 0 #FFF7EF, -1px -1px 0 #FFF7EF, 1px -1px 0 #FFF7EF, -1px 1px 0 #FFF7EF;
 }
