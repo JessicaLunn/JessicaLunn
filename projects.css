@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'Bayon';
+    src: url('Bayon-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #FFF7EF;
+    font-family: 'Bayon', sans-serif;
+    margin: 1em;
+    padding: 1em; /* Remove padding to prevent horizontal overflow */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+
+p, li {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 1em 0;
+}
+
+.main-header h1 {
+    font-size: 3em;
+    margin: 0;
+    padding-left: 60px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.home-link {
+    position: absolute;
+    left: 1%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.home-link img {
+    width: 50px;
+    height: auto;
+}
+
+.project-container {
+    margin: 2em 0;
+}
+
+.project-images, .figma-embed {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-images img, .figma-embed iframe {
+    width: 100%;
+    height: auto;
+    border: none;
+}
+
+.project-link a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    padding: 1em 0;
+    background-color: #FFF7EF;
+    text-align: center;
+    color: #E4DBC8;
+}
+
+@media screen and (max-width: 900px) {
+    .main-header h1 {
+        font-size: 2.5em;
+        padding-left: 40px;
+    }
+
+    .home-link img {
+        width: 40px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main-header h1 {
+        font-size: 2em;
+        padding-left: 30px;
+    }
+
+    .home-link img {
+        width: 30px;
+    }
+}
