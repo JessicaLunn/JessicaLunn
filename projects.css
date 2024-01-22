@@ -14,7 +14,7 @@ body {
   }
 
 p, li {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Karla', sans-serif;
 }
 
 .main-header {
@@ -51,21 +51,37 @@ p, li {
 
 .project-images, .figma-embed {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
     gap: 20px;
     justify-content: center;
 }
 
 .project-images img, .figma-embed iframe {
     width: 100%;
-    height: auto;
+    height: 300px; /* Fixed height for images and iframes */
+    object-fit: cover; /* Only applies to images, ensures content covers the area */
     border: none;
 }
+
 
 .project-link a {
     color: #000;
     text-decoration: none;
     font-weight: bold;
+}
+
+.project-videos {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* This should be the same width as your images */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.project-videos video {
+    width: 100%; /* Video takes the full width of its container */
+    height: 300px; /* Fixed height, same as the images */
+    object-fit: cover; /* Ensures the video covers the area, similar to the images */
 }
 
 footer {
@@ -84,6 +100,13 @@ footer {
     .home-link img {
         width: 40px;
     }
+
+    .project-images, .figma-embed {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(60%, 1fr));
+        gap: 20px;
+        justify-content: center;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -94,5 +117,12 @@ footer {
 
     .home-link img {
         width: 30px;
+    }
+
+    .project-images, .figma-embed {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(60%, 1fr));
+        gap: 20px;
+        justify-content: center;
     }
 }

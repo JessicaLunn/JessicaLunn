@@ -31,3 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   
+function confirmNavigation() {
+    var confirmLeave = confirm("You are about to leave this page. Are you sure?");
+    if (confirmLeave) {
+        window.open('https://www.example.com', '_blank');
+    }
+}
