@@ -126,3 +126,42 @@ footer {
         justify-content: center;
     }
 }
+
+.project-videos[id^="mobileVideo"] {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .project-videos[id^="desktopVideo"] {
+        display: none;
+    }
+    .project-videos[id^="mobileVideo"] {
+        display: block;
+    }
+}
+
+.view-website-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #c6c6c6; /* Example color */
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.view-website-button:hover {
+    background-color: #8c8c8c; /* Darker shade for hover effect */
+}
+
+.pdf-link {
+    color: #c6c6c6; /* Example link color */
+    text-decoration: underline;
+}
+
+.pdf-link:hover {
+    color: #8c8c8c; /* Darker color on hover */
+}
