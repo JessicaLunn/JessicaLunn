@@ -11,10 +11,22 @@ body {
     margin: 1em;
     padding: 1em; /* Remove padding to prevent horizontal overflow */
     overflow-x: hidden; /* Prevent horizontal scrolling */
+
   }
 
 p, li {
     font-family: 'Karla', sans-serif;
+}
+
+.content-wrapper {
+    width: 100%;
+}
+
+.projects-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .main-header {
@@ -47,6 +59,7 @@ p, li {
 
 .project-container {
     margin: 2em 0;
+    align-items: center;
 }
 
 .project-images, .figma-embed {

@@ -16,80 +16,55 @@
     </header>
     <main>
         <section class="section">
-        <div class="container illustrations">
-                
-                <img src="./IMG/illustrations/Winter Herbs.jpg" alt="Winter Herbs">
-                <img src="./IMG/illustrations/Matera.jpg" alt="Matera">
-                <img src="./IMG/illustrations/Tomato types.jpg" alt="Tomato types">
-               
-                <img src="./IMG/illustrations/Sun room.jpg" alt="2" loading="lazy">
-                <img src="./IMG/illustrations/Tomatoes in colour.jpg" alt="Tomatoes in colour" loading="lazy">
-                <img src="./IMG/illustrations/Riz.jpg" alt="Riz" loading="lazy">
-                <img src="./IMG/illustrations/Puttanesca colour.jpg" alt="Puttanesca colour" loading="lazy">
-                <img src="./IMG/illustrations/Campania.jpg" alt="2" loading="lazy">
-                <img src="./IMG/illustrations/Flower power brown.jpg" alt="Flower power brown" loading="lazy">
-                <img src="./IMG/illustrations/Calabria_2.jpg" alt="Calabria 2" loading="lazy">
-                <img src="./IMG/illustrations/Longobucco_Weaving.jpg" alt="Longobucco Weaving" loading="lazy">
-                <img src="./IMG/illustrations/Lazio_Spaghetti_Alla_Vongole.jpg" alt="Lazio Spaghetti Alla Vongole" loading="lazy">
-                <img src="./IMG/illustrations/De cecco.jpg" alt="De cecco" loading="lazy">
-                <img src="./IMG/illustrations/Emilia_Romagna.jpg" alt="Emilia Romagna" loading="lazy">
-                <img src="./IMG/illustrations/Summer fun.jpg" alt="2" loading="lazy">
-                <img src="./IMG/illustrations/2fin.jpg" alt="2" loading="lazy">
-                <img src="./IMG/illustrations/3fin.jpg" alt="3" loading="lazy">
-                <img src="./IMG/illustrations/4.jpg" alt="4" loading="lazy">
-                <img src="./IMG/illustrations/5fin.jpg" alt="5" loading="lazy">
-                <img src="./IMG/illustrations/10fin.jpg" alt="10" loading="lazy">
-                <img src="./IMG/illustrations/Flan.jpg" alt="Flan" loading="lazy">
-                <img src="./IMG/illustrations/Door.jpg" alt="Door" loading="lazy">
-                <img src="./IMG/illustrations/Mush 2.jpg" alt="Mush 2" loading="lazy">
-                <img src="./IMG/illustrations/Nasturtiums.jpg" alt="Nasturtiums" loading="lazy">
-                <img src="./IMG/illustrations/Waterlillies.jpg" alt="Waterlillies" loading="lazy">
-                <img src="./IMG/illustrations/Picnic.jpg" alt="Picnic" loading="lazy">
-                <img src="./IMG/illustrations/Nasturtiums wallpaper.jpg" alt="Nasturtiums wallpaper" loading="lazy">
-                <img src="./IMG/illustrations/Flower pattern.jpg" alt="Flower pattern" loading="lazy">
-                <img src="./IMG/illustrations/Daisies.jpg" alt="Daisies" loading="lazy">
-                <img src="./IMG/illustrations/Clam.jpg" alt="Clam" loading="lazy">
-                <img src="./IMG/illustrations/Sea creature.jpg" alt="Sea creature" loading="lazy">
-                <img src="./IMG/illustrations/Gorge.jpg" alt="Gorge" loading="lazy">
-                <img src="./IMG/illustrations/Hanging.jpg" alt="Hanging" loading="lazy">
-                <img src="./IMG/illustrations/Wine.jpg" alt="Wine" loading="lazy">
-                <img src="./IMG/illustrations/Eggs.jpg" alt="Eggs" loading="lazy">
-                <img src="./IMG/illustrations/Lunaria.jpg" alt="Lunaria" loading="lazy">
-                <img src="./IMG/illustrations/5 of cups.jpg" alt="5 of cups" loading="lazy">
-                <img src="./IMG/illustrations/Sea thing.jpg" alt="Sea thing" loading="lazy">
-
-                <img src="./IMG/illustrations/Abruzzo.jpg" alt="Abruzzo">
-               
-    
-                <img src="./IMG/illustrations/Untitled_Artwork 1 (1).jpg" alt="Untitled Artwork 1 (1)" loading="lazy">
-                <img src="./IMG/illustrations/Untitled_Artwork 1.jpg" alt="Untitled Artwork 1" loading="lazy">
-                <img src="./IMG/illustrations/Untitled_Artwork 2.jpg" alt="Untitled Artwork 2" loading="lazy">
-                <img src="./IMG/illustrations/Untitled_Artwork.jpg" alt="Untitled Artwork" loading="lazy">
-                
-                
-                        
-        </div>
-    </section>
+            <div class="container illustrations"></div>
+        </section>
 
         <section class="section">
             <h2>Projects</h2>
-            <div class="container projects ">
-                <img src="./IMG/projects/Valtc.jpg" alt="Valtc" loading="lazy">
+            <div class="container projects"></div>
         </section>
 
         <section class="section">
             <h2>Cards</h2>
-            <div class="container cards">
-            <img src="./IMG/cards/Cuddle dumplings.jpg" alt="Cuddle Dumplings" loading="lazy">
-            <img src="./IMG/cards/Dawg.jpg" alt="Dawg" loading="lazy">
-            <img src="./IMG/cards/Hedgehugs .jpg" alt="Hedgehugs" loading="lazy">
-            <img src="./IMG/cards/Jug.jpg" alt="Jug" loading="lazy">
-            <img src="./IMG/cards/Toads.jpg" alt="Toads" loading="lazy">   
-            </div>
+            <div class="container cards"></div>
         </section>
     </main>
     <footer>
-        <p>© 2020 Jessica Lunn</p>  
-    </footer>   
+        <p>© 2020 Jessica Lunn</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('./images.json')
+                .then(response => response.json())
+                .then(data => {
+                    const illustrationsContainer = document.querySelector('.container.illustrations');
+                    const projectsContainer = document.querySelector('.container.projects');
+                    const cardsContainer = document.querySelector('.container.cards');
+
+                    data.illustrations.forEach(src => {
+                        const img = document.createElement('img');
+                        img.src = src;
+                        img.loading = 'lazy';
+                        illustrationsContainer.appendChild(img);
+                    });
+
+                    data.projects.forEach(src => {
+                        const img = document.createElement('img');
+                        img.src = src;
+                        img.loading = 'lazy';
+                        projectsContainer.appendChild(img);
+                    });
+
+                    data.cards.forEach(src => {
+                        const img = document.createElement('img');
+                        img.src = src;
+                        img.loading = 'lazy';
+                        cardsContainer.appendChild(img);
+                    });
+                })
+                .catch(error => console.error('Error loading images:', error));
+        });
+    </script>
 </body>
 </html>
