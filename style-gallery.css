@@ -17,6 +17,11 @@ p {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.fade-img {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
 .requirement {
   font-family: 'Bayon', sans-serif; /* Replace 'FirstFontFamily' with the actual font family for the requirement text */
 }
