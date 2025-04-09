@@ -2,14 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
   fetch('./images.json')
       .then(response => response.json())
       .then(data => {
-          loadImagesConcurrently(data.illustrations, document.querySelector('.container.illustrations'), 6);
+          loadImagesConcurrently(data.illustrations, document.querySelector('.container.illustrations'), 4);
           loadImagesConcurrently(data.projects, document.querySelector('.container.projects'), 4);
           loadImagesConcurrently(data.cards, document.querySelector('.container.cards'), 4);
       })
       .catch(console.error);
 });
 
-function loadImagesConcurrently(imageArray, container, preloadCount = 6) {
+function loadImagesConcurrently(imageArray, container, preloadCount = 4) {
   const preloadImages = imageArray.slice(0, preloadCount);
   const lazyImages = imageArray.slice(preloadCount);
 
